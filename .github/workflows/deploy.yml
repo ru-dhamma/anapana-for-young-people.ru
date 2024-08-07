@@ -1,0 +1,30 @@
+on: push
+name: Deploy website on push
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Get latest code
+                uses: actions/checkout@v4
+
+            -   name: Use Node.js 20
+                uses: actions/setup-node@v4
+                with:
+                    node-version: '20'
+
+            -   name: NPM install
+                uses: bahmutov/npm-install@v1
+
+            -   name: Build Project
+                run: npm run build
+
+            -   name: Deploy on server
+                uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+                with:
+                    server: vipassana.ru
+                    username: anapana
+                    ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+                    local_path: './out/*'
+                    remote_path: '/home/anapana/web'
+                    sftpArgs: '-o ConnectTimeout=5'
