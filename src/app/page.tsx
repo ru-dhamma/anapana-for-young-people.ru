@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, FingerPrintIcon } from '@heroicons/react/20/solid'
 
 // const navigation = [
 //   { name: 'Product', href: '#' },
@@ -17,6 +18,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
+    <>
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
@@ -148,7 +150,7 @@ export default function Example() {
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           aria-hidden="true"
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         >
@@ -159,11 +161,152 @@ export default function Example() {
             }}
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           />
+        </div> */}
+      </div>
+    </div>
+
+
+    <Centered2x2Grid />
+
+    <FeatureSection />
+
+    </>
+  )
+}
+
+
+
+
+
+const features = [
+  {
+    name: 'Память',
+    description:
+      'Улучшается память, концентрация и внимание',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'Решительность',
+    description: 'Улучшается способность принимать решения',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Стрессоустойчивость',
+    description: 'Снижается тревожность и стресс',
+    icon: ServerIcon,
+  },
+  {
+    name: 'Осознанность',
+    description:
+      'Повышается осознанность и спокойствие ума',
+    icon: FingerPrintIcon,
+  },
+  {
+    name: 'Уверенность',
+    description:
+      'Развивается уверенность в себе',
+    icon: FingerPrintIcon,
+  },
+  {
+    name: 'Доброжелательность',
+    description:
+      'Развивается доброжелательность к людям и открытость к миру',
+    icon: FingerPrintIcon,
+  },
+]
+
+function Centered2x2Grid() {
+  return (
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Зачем детям и подросткам практиковать медитацию?
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Регулярная практика медитации поможет вашему ребенку чувствовать себя хорошо физически и ментально.
+          </p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative pl-16">
+                <dt className="text-base font-semibold leading-7 text-gray-900">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <feature.icon aria-hidden="true" className="h-6 w-6 text-white" />
+                  </div>
+                  {feature.name}
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </div>
   )
 }
+
+
+const productFeatures = [
+  {
+    name: 'Push to deploy.',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'SSL certificates.',
+    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Database backups.',
+    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    icon: ServerIcon,
+  },
+]
+
+function FeatureSection() {
+  return (
+    <div className="overflow-hidden bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="lg:pr-8 lg:pt-4">
+            <div className="lg:max-w-lg">
+              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Как начать медитировать и не бросить?</p>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Но для того, чтобы получить все преимущества, которые дает медитация, практиковать нужно регулярно - по 10 минут утром и вечером. А как это делать, если нет понимания, с чего начать, и как не бросить? Для этого вашему ребенку и нужно пройти курс медитации анапана. Медитация анапана — это метод помогающий сохранять спокойствие ума, концентрируясь на одном объекте. Естественный объект концентрации – ваше дыхание, которое всегда с вами. Если вы просто осознаете свое дыхание, как оно входит, как оно выходит, ум становится более спокойным и умиротворенным.
+              </p>
+              {/* <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                {productFeatures.map((feature) => (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900">
+                      <feature.icon aria-hidden="true" className="absolute left-1 top-1 h-5 w-5 text-indigo-600" />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl> */}
+            </div>
+          </div>
+          <img
+            alt="Product screenshot"
+            src="https://allroundclub.com/blog/wp-content/uploads/2021/08/Meditation-for-kids.png"
+            width={2432}
+            height={1442}
+            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 
 
 
