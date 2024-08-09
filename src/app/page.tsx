@@ -139,7 +139,7 @@ export default function Example() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="https://www.dhamma.org/ru/schedules/schdullabha#child_course"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-m font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 target='_blank'
               >
                 Записаться на курс
@@ -183,35 +183,35 @@ const features = [
     name: 'Память',
     description:
       'Улучшается память, концентрация и внимание',
-    icon: CloudArrowUpIcon,
+    icon: "🧠",
   },
   {
     name: 'Решительность',
     description: 'Улучшается способность принимать решения',
-    icon: LockClosedIcon,
+    icon: "😎",
   },
   {
     name: 'Стрессоустойчивость',
     description: 'Снижается тревожность и стресс',
-    icon: ServerIcon,
+    icon: '💆‍♀️',
   },
   {
     name: 'Осознанность',
     description:
       'Повышается осознанность и спокойствие ума',
-    icon: FingerPrintIcon,
+    icon: "🧘‍♂️",
   },
   {
     name: 'Уверенность',
     description:
       'Развивается уверенность в себе',
-    icon: FingerPrintIcon,
+    icon: "🦁",
   },
   {
     name: 'Доброжелательность',
     description:
       'Развивается доброжелательность к людям и открытость к миру',
-    icon: FingerPrintIcon,
+    icon: "🤝",
   },
 ]
 
@@ -220,7 +220,7 @@ function Centered2x2Grid() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+          {/* <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2> */}
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Зачем детям и подросткам практиковать медитацию?
           </p>
@@ -233,8 +233,8 @@ function Centered2x2Grid() {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <feature.icon aria-hidden="true" className="h-6 w-6 text-white" />
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-white">
+                    <span className="text-5xl">{feature.icon}</span>
                   </div>
                   {feature.name}
                 </dt>
@@ -275,7 +275,7 @@ function FeatureSection() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
+              {/* <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2> */}
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Как начать медитировать и не бросить?</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Но для того, чтобы получить все преимущества, которые дает медитация, практиковать нужно регулярно - по 10 минут утром и вечером. А как это делать, если нет понимания, с чего начать, и как не бросить? Для этого вашему ребенку и нужно пройти курс медитации анапана. Медитация анапана — это метод помогающий сохранять спокойствие ума, концентрируясь на одном объекте. Естественный объект концентрации – ваше дыхание, которое всегда с вами. Если вы просто осознаете свое дыхание, как оно входит, как оно выходит, ум становится более спокойным и умиротворенным.
