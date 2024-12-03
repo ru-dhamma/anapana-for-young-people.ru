@@ -318,7 +318,7 @@ function FeatureSection() {
     useEffect(() => {
       const fetchCourses = async () => {
         try {
-          const url = 'https://seahorse-app-db78s.ondigitalocean.app/api/courses'
+          const url = 'https://seahorse-app-db78s.ondigitalocean.app/api/schedule?course_type=children'
           const response = await fetch(url); // Replace with your API endpoint
           if (!response.ok) {
             throw new Error('Network response was not ok');
